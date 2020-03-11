@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 // Components
 import Header from "./components/Header";
@@ -7,67 +9,48 @@ import Button from "./components/Button";
 
 // Screen
 import List from "./containers/ListScreen";
+import Splash from "./containers/SplashScreen";
+import Menu from "./containers/MenuScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("./assets/home.png")}
-        style={styles.background}
-      >
-        <Header />
-        <View>{/* <List /> */}</View>
-        <View style={styles.menu}>
-          <Button
-            name="List"
-            alert="List"
-            colorIcon="#EE6F61"
-            background={0.8}
-            colorText="#EE6F61"
-          />
-          <Button
-            name="Coming Soon"
-            alert="Coming Soon"
-            colorIcon="#EFEFEF"
-            background={0.5}
-            colorText="#EFEFEF"
-          />
-          <Button
-            name="Coming Soon"
-            alert="Coming Soon"
-            colorIcon="#EFEFEF"
-            background={0.5}
-            colorText="#EFEFEF"
-          />
-          <Button
-            name="Coming Soon"
-            alert="Coming Soon"
-            colorIcon="#EFEFEF"
-            background={0.5}
-            colorText="#EFEFEF"
-          />
-        </View>
-      </ImageBackground>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator headerMode="none">
+        {isLoading ? (
+          <Stack.Screen options={{ header: () => null }} name="Splash">
+            {() => <Splash setIsLoading={setIsLoading} />}
+          </Stack.Screen>
+        ) : (
+          <Stack.Screen
+            name="menu"
+            options={{
+              title: "menu"
+            }}
+          >
+            {() => (
+              <Stack.Navigator>
+                <Stack.Screen
+                  name="menuScreen"
+                  options={{ header: () => null }}
+                >
+                  {() => <Menu />}
+                </Stack.Screen>
+
+                <Stack.Screen
+                  name="listScreen"
+                  options={{ header: () => null }}
+                >
+                  {() => <List />}
+                </Stack.Screen>
+              </Stack.Navigator>
+            )}
+          </Stack.Screen>
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-// Styles //
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-
-  background: {
-    width: "100%",
-    height: "100%"
-    // opacity: 0.8
-  },
-  menu: {
-    display: "flex",
-    alignSelf: "center"
-  }
-});

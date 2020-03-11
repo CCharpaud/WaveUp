@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  ActivityIndicator,
+  ImageBackground,
+  StyleSheet,
+  StatusBar
+} from "react-native";
+
+// Components //
+import Header from "../components/Header";
+import BackButton from "../components/BackButton";
+
+// Axios Call for Data
 import Axios from "axios";
 
 export default function ListScreen() {
-  // States //
-  // const [userId, setUserIdid] = useState("");
-  // const [id, setId] = useState("");
-  // const [title, setTitle] = useState("");
-  // const [completed, setCompleted] = useState("");
-
+  // States for data Axios call and Loading of informations //
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // API Call //
-
+  // API Call with Axios //
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,31 +41,52 @@ export default function ListScreen() {
   }, []);
 
   return (
-    <>
-      {isLoading === true ? (
-        <View>
-          <ActivityIndicator size="large" color="red" />
-        </View>
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={item => String(item.id)}
-          renderItem={({ item }) => (
-            <Text style={{ color: "white", padding: 10 }}> {item.title} </Text>
-          )}
-        />
-      )}
-    </>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require("../assets/img/home.png")}
+        style={styles.background}
+      >
+        <Header />
+        {isLoading === true ? (
+          <View>
+            <ActivityIndicator size="large" color="#EE6F61" />
+          </View>
+        ) : (
+          <>
+            <StatusBar barStyle="light-content" />
+            <BackButton />
+            <FlatList
+              style={styles.flat}
+              data={data}
+              keyExtractor={item => String(item.id)}
+              renderItem={({ item }) => (
+                <Text style={{ color: "white", padding: 10 }}>
+                  {item.title}
+                </Text>
+              )}
+            />
+          </>
+        )}
+      </ImageBackground>
+    </View>
   );
 }
 
-/*      if (response.data) {
-          setUserId(response.data.userId);
-          setIsLoading(false);
-        } else {
-          alert("une erreur est survenue");
-        }
-      } catch (e) {
-        alert("une erreur est survenue");
-      }
-    }; */
+// Styles //
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+
+  background: {
+    width: "100%",
+    height: "100%"
+  },
+
+  flat: {
+    padding: 10
+  }
+});

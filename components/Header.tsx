@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Image source={require("../assets/logo.png")} style={styles.logo} />
+      <Image source={require("../assets/img/logo.png")} style={styles.logo} />
     </View>
   );
 }
@@ -14,13 +14,13 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 40
   },
 
   logo: {
     resizeMode: "contain",
     height: 100,
-    width: 300,
-    marginTop: 30
+    width: 300
   }
 });
