@@ -1,6 +1,6 @@
 # WaveUp
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge]
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 ## Pour commencer
 
@@ -31,7 +31,7 @@ expo start
 
 ## Fabriqué avec
 
-* [React-Native](http://materializecss.com) - Framework
+* [React-Native](https://reactnative.dev) - Framework
 
 
 ## Auteurs
