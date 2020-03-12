@@ -4,7 +4,10 @@
 
 # Captures
 
-![Splash-Screen](https://zupimages.net/up/20/11/r57x.png | width=100)
+![Splash-Screen](https://zupimages.net/up/20/11/r57x.png)
+![Menu-Screen](https://zupimages.net/up/20/11/6h0t.png)
+![List-Screen](https://zupimages.net/up/20/11/fy52.png)
+
 
 ## Pour commencer
 
