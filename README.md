@@ -2,6 +2,10 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
+# Captures
+
+![Splash-Screen](https://zupimages.net/up/20/11/r57x.png)
+
 ## Pour commencer
 
 Entrez ici les instructions pour bien débuter avec votre projet...
