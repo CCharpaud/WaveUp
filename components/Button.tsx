@@ -1,9 +1,10 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 
+// Import of Navigation //
 import { useNavigation } from "@react-navigation/core";
 
-// Icons
+// Icons //
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Button(props) {

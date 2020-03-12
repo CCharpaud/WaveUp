@@ -1,14 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  View,
-  Image,
-  StyleSheet,
-  ActivityIndicator,
-  Dimensions,
-  ImageBackground
-} from "react-native";
-
-const { width, height } = Dimensions.get("window");
+import { View, Image, StyleSheet, ImageBackground } from "react-native";
 
 export default function SplashScreen(props) {
   const { setIsLoading } = props;
@@ -17,7 +8,7 @@ export default function SplashScreen(props) {
   useEffect(() => {
     setTimeout(function() {
       setIsLoading(false);
-    }, 2500);
+    }, 3000);
   }, []);
 
   return (
@@ -31,7 +22,6 @@ export default function SplashScreen(props) {
             style={styles.img}
             source={require("../assets/img/logo.png")}
           />
-          <ActivityIndicator size="large" color="#EE6F61" />
         </View>
       </ImageBackground>
     </View>
@@ -51,6 +41,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
+
   imgContain: {
     position: "absolute",
     top: 0,

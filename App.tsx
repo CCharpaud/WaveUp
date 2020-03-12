@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { StyleSheet, View, ImageBackground } from "react-native";
+
+// Import of React-Navigation //
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-// Components
-import Header from "./components/Header";
-import Button from "./components/Button";
-
-// Screen
+// Screen //
 import List from "./containers/ListScreen";
 import Splash from "./containers/SplashScreen";
 import Menu from "./containers/MenuScreen";
 
+// Stack for React-Navigation //
 const Stack = createStackNavigator();
 
 export default function App() {
+  // State of loading //
   const [isLoading, setIsLoading] = useState(true);
 
   return (

@@ -15,7 +15,7 @@ export default function MenuScreen() {
         <Header />
         <View style={styles.menu}>
           <Button
-            // Props //
+            // Component customization props //
             name="List"
             colorIcon="#EE6F61"
             background={0.8}
@@ -23,7 +23,7 @@ export default function MenuScreen() {
             destination={"listScreen"}
           />
           <Button
-            // Props //
+            // Component customization props //
             name="Coming Soon"
             colorIcon="#EFEFEF"
             background={0.2}
@@ -31,7 +31,7 @@ export default function MenuScreen() {
             destination={"menuScreen"}
           />
           <Button
-            // Props //
+            // Component customization props //
             name="Coming Soon"
             colorIcon="#EFEFEF"
             background={0.2}
@@ -39,7 +39,7 @@ export default function MenuScreen() {
             destination={"menuScreen"}
           />
           <Button
-            // Props //
+            // Component customization props //
             name="Coming Soon"
             colorIcon="#EFEFEF"
             background={0.2}

@@ -1,9 +1,8 @@
 import React from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 
 import { useNavigation } from "@react-navigation/core";
-import { MaterialIcons } from "@expo/vector-icons";
-import { goBack } from "@react-navigation/routers/lib/typescript/src/CommonActions";
+import { Entypo } from "@expo/vector-icons";
 
 export default function BackButton(props) {
   const navigation = useNavigation();
@@ -16,16 +15,16 @@ export default function BackButton(props) {
             // I use the online style because I receive a props and it is impossible to recover it in the stylesheet //
             backgroundColor: "#808080",
             height: 50,
-            width: 200,
-            justifyContent: "center",
+            width: 50,
+            display: "flex",
             alignItems: "center",
-            borderRadius: 20,
-            opacity: props.background,
-            marginBottom: 30
+            justifyContent: "center",
+            borderRadius: 50,
+            opacity: 0.5,
+            marginBottom: 50
           }}
         >
-          <MaterialIcons name="list" color={props.colorIcon} size={30} />
-          <Text style={{ color: props.colorText }}> {props.name} </Text>
+          <Entypo name="back" color={props.colorIcon} size={30} />
         </View>
       </TouchableOpacity>
     </View>

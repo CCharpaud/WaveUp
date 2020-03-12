@@ -5,15 +5,17 @@ import {
   FlatList,
   ActivityIndicator,
   ImageBackground,
-  StyleSheet,
-  StatusBar
+  StyleSheet
 } from "react-native";
 
 // Components //
 import Header from "../components/Header";
 import BackButton from "../components/BackButton";
 
-// Axios Call for Data
+// Icons //
+import { MaterialIcons } from "@expo/vector-icons";
+
+// Axios Call for Data //
 import Axios from "axios";
 
 export default function ListScreen() {
@@ -29,6 +31,7 @@ export default function ListScreen() {
           "https://jsonplaceholder.typicode.com/todos"
         );
         if (response.data) {
+          // Set the data state //
           setData(response.data);
           setIsLoading(false);
         }
@@ -53,20 +56,47 @@ export default function ListScreen() {
           </View>
         ) : (
           <>
-            <StatusBar barStyle="light-content" />
-            <BackButton />
             <FlatList
               style={styles.flat}
               data={data}
               keyExtractor={item => String(item.id)}
               renderItem={({ item }) => (
-                <Text style={{ color: "white", padding: 10 }}>
-                  {item.title}
-                </Text>
+                <>
+                  {/* ternary limitation of results (20) */}
+                  {item.id <= 20 ? (
+                    <View style={styles.containOfData}>
+                      <Text style={styles.text}> ID : {item.id}</Text>
+
+                      <Text style={styles.text}>Title : {item.title}</Text>
+                      {String(item.completed) === "true" ? (
+                        <View style={styles.containOfCompleted}>
+                          <Text style={styles.text}>Completed :</Text>
+                          <MaterialIcons
+                            name="thumb-up"
+                            color="#a6cc47"
+                            size={20}
+                          />
+                        </View>
+                      ) : (
+                        <View style={styles.containOfCompleted}>
+                          <Text style={styles.text}>Completed :</Text>
+                          <MaterialIcons
+                            name="thumb-down"
+                            color="#d1403b"
+                            size={20}
+                          />
+                        </View>
+                      )}
+                    </View>
+                  ) : null}
+                </>
               )}
             />
           </>
         )}
+        <View style={styles.containOfBackButton}>
+          <BackButton />
+        </View>
       </ImageBackground>
     </View>
   );
@@ -87,6 +117,31 @@ const styles = StyleSheet.create({
   },
 
   flat: {
-    padding: 10
+    padding: 20
+  },
+
+  containOfData: {
+    padding: 10,
+    backgroundColor: "#EE6F61",
+    opacity: 0.9,
+    borderRadius: 10,
+    marginBottom: 10
+  },
+
+  text: {
+    color: "white",
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+
+  containOfCompleted: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+
+  containOfBackButton: {
+    display: "flex",
+    alignSelf: "center",
+    marginTop: 20
   }
 });
