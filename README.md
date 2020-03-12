@@ -7,10 +7,6 @@
 ![Screens](https://www.zupimages.net/up/20/11/k7za.png)
 
 
-## Pour commencer
-
-Entrez ici les instructions pour bien débuter avec votre projet...
-
 ### Pré-requis
 
 - React-Native
