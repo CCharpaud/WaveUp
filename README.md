@@ -12,18 +12,12 @@ Entrez ici les instructions pour bien débuter avec votre projet...
 - React Navigation
 - JavaScript / TypeScript
 - Axios 
+- Hooks & Props
 ...
 
 ### Installation
 
-Les étapes pour installer votre programme....
-
-Dites ce qu'il faut faire...
-
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
-
-
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+npm install
 
 ## Démarrage
 
