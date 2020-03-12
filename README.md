@@ -4,7 +4,7 @@
 
 # Captures
 
-![Splash-Screen](https://zupimages.net/up/20/11/r57x.png =150x)
+![Splash-Screen](https://zupimages.net/up/20/11/r57x.png | width=100)
 
 ## Pour commencer
 
