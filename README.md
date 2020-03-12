@@ -4,7 +4,7 @@
 
 # Captures
 
-![Screens](https://zupimages.net/up/20/11/k7za.png)
+![Screens](https://www.zupimages.net/up/20/11/k7za.png)
 
 
 ## Pour commencer
