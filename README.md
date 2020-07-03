@@ -2,17 +2,15 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-# Captures
 
-![Screens](https://zupimages.net/up/20/27/jvk0.png)
 
 
 ### Pré-requis
 
-- React
+- React-Native
 - JavaScript
 - Axios 
-- Hooks & Props
+- Hooks & Props 
 ...
 
 ### Installation
