@@ -4,14 +4,13 @@
 
 # Captures
 
-![Screens](https://www.zupimages.net/up/20/11/k7za.png)
+![Screens](https://zupimages.net/up/20/27/jvk0.png)
 
 
 ### Pré-requis
 
-- React-Native
-- React Navigation
-- JavaScript / TypeScript
+- React
+- JavaScript
 - Axios 
 - Hooks & Props
 ...
@@ -26,7 +25,7 @@ expo start
 
 ## Fabriqué avec
 
-* [React-Native](https://reactnative.dev) - Framework
+* [React-Native](https://fr.reactjs.org) - Framework
 
 
 ## Auteurs
